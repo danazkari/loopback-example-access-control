@@ -1,5 +1,13 @@
-# loopback-example-access-control
+# loopback-example-access-control (issue demo)
 
+## Steps to reproduce the issue!
+1. Log in as Bob (or any other user).
+1. Using the auth token you got earlier, make a `DELETE` request to `/users/{id}`.
+1. You should get a `400` error with the message `For some random reason, you cannot delete this user.`.
+1. Try once more to either repeat the same request as earlier, or make any other reuqest using the same token.
+1. You'll get an error that the auth token is required, as if the token does not exist.
+
+---
 ```
 $ git clone https://github.com/strongloop/loopback-example-access-control
 $ cd loopback-example-access-control

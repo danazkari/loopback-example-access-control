@@ -4,5 +4,9 @@
 // License text available at https://opensource.org/licenses/Artistic-2.0
 
 module.exports = function(User) {
-
+  User.observe('before delete', async (context) => {
+    const error = new Error('For some random reason, you cannot delete this user.');
+    error.statusCode = 400;
+    throw error;
+  });
 };
